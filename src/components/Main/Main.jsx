@@ -10,27 +10,43 @@ export default class Main extends Component {
     this.state = {
       searchParam: [
         {
-          'Patient': ["apples", "oranges"]
+          Patient: ["apples", "oranges"]
         }, {
-          'Practitioner': ["lemons"]
+          Practitioner: ["lemons"]
         }
       ],
-      data: []
+      data: [
+
+      ],
+      resourceName:'',
     }
     console.log(this.state.searchParam);
   }
   handelResource(val) {
-    console.log(val[Object.keys(val)[0]]);
+
+    //getting value from object click from panel
+    console.log(val[Object.keys(val)]);
+    console.log("resource with object "+Object.keys(val));
+    const  myResource=Object.keys(val);
     // this.state.searchParam.forEach(item =>{
     //   if (item.hasOwnProperty(val)){
     //     console.log(item[Object.keys(item)[0]]);
     //   }
     // })
 
+    //setting the value got from panel click
+    this.setState({
+      data:val[Object.keys(val)],
+      resourceName:myResource,
+    });
+
+
+
   }
 
   render() {
     const {data} = this.state;
+    const resourceName=this.state.resourceName;
     // const resource = ["Patient", "Practitioner"];
     const resource = this.state.searchParam;
 
@@ -41,7 +57,7 @@ export default class Main extends Component {
         </div>
         <div className="col-md-8 col-sm-12 Search">
           <div className="col-md-12 SearchGrid1">
-            <SearchForm data={data}/>
+            <SearchForm data={data} resourceName={resourceName}/>
 
           </div>
 

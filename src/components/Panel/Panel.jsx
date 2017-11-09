@@ -4,12 +4,14 @@ import React , { Component } from 'react';
 export default class Panel extends Component {
 
   onRsourceClick(val){
-    // console.log("resoure clicked" +val);
+    //  console.log("resoure clicked " +Object.keys(val));
     this.props.handelResource(val);
+    console.log(val);
+
   }
   render(){
   let {resource} = this.props;
-  console.log("resourcess are: "+resource);
+  console.log(resource);
     return(
 
         <div className="panel panel-primary Panelcss ">

@@ -32,8 +32,14 @@ body {
 .SearchForm button {
   margin-left: 30px;
 }
-.SearchForm p {
+.SearchRecord {
   position: absolute;;
   right:20px;
   top: 50px;
+}
+.SearchUrl {
+  position: absolute;
+  float: left;
+  top: 50px;
+  left: 50px;
 }
